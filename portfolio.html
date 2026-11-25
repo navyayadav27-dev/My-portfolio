@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navya Yadav | Developer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #253047;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #101c32;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+            font-size: 23px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #e5eaf3;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* HOME SECTION */
+
+        #home {
+            min-height: 85vh;
+            padding: 75px 8%;
+            background: linear-gradient(120deg, #e8eef9, #ffffff);
+            display: flex;
+            align-items: center;
+        }
+
+        .home-container {
+            max-width: 1150px;
+            margin: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .home-content {
+            flex: 1;
+        }
+
+        .home-content .tagline {
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            color: #101c32;
+            margin: 15px 0;
+        }
+
+        .home-content h2 {
+            font-size: 24px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 17px;
+            max-width: 600px;
+            color: #526078;
+        }
+
+        .photo-container {
+            flex: 0 0 310px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo {
+            width: 300px;
+            height: 370px;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 15px;
+            border: 5px solid white;
+            box-shadow: 0 12px 35px rgba(16, 28, 50, 0.18);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 27px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #173fa5;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            background: #101c32;
+            margin-left: 10px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 75px 9%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #101c32;
+            margin-bottom: 12px;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 4px;
+            background: #2563eb;
+            margin: 0 auto 40px;
+            border-radius: 5px;
+        }
+
+        /* ABOUT */
+
+        #about {
+            background: white;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+            color: #526078;
+        }
+
+        /* CAREER OBJECTIVE */
+
+        .objective-box {
+            max-width: 900px;
+            margin: auto;
+            background: #eaf1ff;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            color: #35435c;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 13px 25px;
+            border: 1px solid #dce4f0;
+            border-radius: 7px;
+            font-weight: bold;
+            color: #1e3a65;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        /* EDUCATION */
+
+        #education {
+            background: white;
+        }
+
+        .education-table {
+            width: 100%;
+            max-width: 950px;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .education-table th {
+            background: #101c32;
+            color: white;
+            padding: 17px;
+            text-align: left;
+        }
+
+        .education-table td {
+            padding: 17px;
+            border-bottom: 1px solid #e5eaf1;
+        }
+
+        .education-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* PROJECTS */
+
+        .projects-container {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            padding: 27px;
+            border-radius: 10px;
+            border: 1px solid #e1e7f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project h3 {
+            color: #1d4ed8;
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .project p {
+            color: #5b6577;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .tech {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+
+        #contact {
+            background: white;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px;
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101c32;
+            color: #dce5f3;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .home-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .home-content h1 {
+                font-size: 36px;
+            }
+
+            .photo-container {
+                flex-basis: auto;
+            }
+
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .education-table th,
+            .education-table td {
+                padding: 10px 7px;
+                font-size: 13px;
+            }
+
+            .profile-photo {
+                width: 250px;
+                height: 310px;
+            }
+
+            .home-content h1 {
+                font-size: 30px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <h2>Navya Yadav</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME SECTION -->
+
+    <section id="home">
+
+        <div class="home-container">
+
+            <div class="home-content">
+
+                <p class="tagline">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hello, I'm Navya Yadav</h1>
+
+                <h2>B.Tech CSE | Cybersecurity Student</h2>
+
+                <p>
+                    I am a Computer Science Engineering student
+                    specializing in Cybersecurity. I am passionate
+                    about technology, programming, artificial
+                    intelligence and developing innovative solutions.
+                </p>
+
+                <a href="#projects" class="btn">
+                    Explore My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="photo-container">
+
+                
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+
+        <div class="about">
+
+            <p>
+                Hello! I am Navya Yadav, currently pursuing
+                B.Tech in Computer Science Engineering with
+                a specialization in Cybersecurity at
+                Shri Ramswaroop Memorial University.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy exploring new technologies, developing
+                web applications and learning about cybersecurity
+                and artificial intelligence.
+                I believe in continuous learning and improving
+                my technical and problem-solving abilities
+                through practical projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAREER OBJECTIVE -->
+
+    <section id="objective">
+
+        <h2>Career Objective</h2>
+        <div class="section-line"></div>
+
+        <div class="objective-box">
+
+            <p>
+                To build a career in the technology industry
+                where I can apply my knowledge of Computer Science,
+                Cybersecurity and software development.
+                I aim to continuously improve my technical skills,
+                gain practical experience and contribute to
+                meaningful technology projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+
+    <section id="skills">
+
+        <h2>Technical Skills</h2>
+        <div class="section-line"></div>
+
+        <div class="skills-container">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Cybersecurity</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Problem Solving</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION SECTION -->
+
+    <section id="education">
+
+        <h2>Education</h2>
+        <div class="section-line"></div>
+
+        <table class="education-table">
+
+            <tr>
+                <th>Qualification</th>
+                <th>Institution</th>
+                <th>Result</th>
+            </tr>
+
+            <tr>
+                <td>Class 10th</td>
+                <td>Kendriya Vidyalaya</td>
+                <td>88%</td>
+            </tr>
+
+            <tr>
+                <td>Class 12th</td>
+                <td>Kendriya Vidyalaya</td>
+                <td>80%</td>
+            </tr>
+
+            <tr>
+                <td>B.Tech CSE</td>
+                <td>Shri Ramswaroop Memorial University</td>
+                <td>Currently Pursuing</td>
+            </tr>
+
+        </table>
+
+        <p style="text-align:center; margin-top:20px;">
+            <strong>Specialization:</strong> Cybersecurity
+            <br>
+            <strong>Expected Graduation:</strong> 2029
+        </p>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+
+    <section id="projects">
+
+        <h2>My Projects</h2>
+        <div class="section-line"></div>
+
+        <div class="projects-container">
+
+            <div class="project">
+
+                <h3>Real-Time Bus Tracking System</h3>
+
+                <p>
+                    A web-based application designed to help
+                    students track buses and coordinate
+                    their transportation.
+                </p>
+
+                <div class="tech">
+                    HTML | CSS | JavaScript | Google Maps API
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Student Coordination System</h3>
+
+                <p>
+                    A system designed to improve communication
+                    and coordination between students through
+                    a simple web-based platform.
+                </p>
+
+                <div class="tech">
+                    HTML | CSS | JavaScript
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A responsive personal website created
+                    to showcase my professional profile,
+                    technical skills, education and projects.
+                </p>
+
+                <div class="tech">
+                    HTML | CSS
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Myntra Clone</h3>
+
+                <p>
+                    A fashion e-commerce website inspired by
+                    Myntra, featuring product browsing,
+                    size selection, wishlist, shopping bag
+                    and a basic checkout experience.
+                </p>
+
+                <div class="tech">
+                    HTML | CSS | JavaScript
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>AI-Based Attendance Management System</h3>
+
+                <p>
+                    A project focused on using artificial
+                    intelligence to support and simplify
+                    student attendance management.
+                </p>
+
+                <div class="tech">
+                    AI | Attendance Management | Programming
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Multimodal Chatbot</h3>
+
+                <p>
+                    An AI-powered chatbot project designed
+                    to support interactions through multiple
+                    types of input and provide intelligent
+                    responses.
+                </p>
+
+                <div class="tech">
+                    Python | Streamlit | FastAPI | MySQL
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section id="contact">
+
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+
+        <div class="contact">
+
+            <p>
+                I am always interested in learning,
+                connecting and exploring opportunities
+                in technology.
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:yadavnavya130@gmail.com">
+                    yadavnavya130@gmail.com
+                </a>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/navyayadav27-dev"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    navyayadav27-dev
+                </a>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/navya-yadav-671839378"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Navya Yadav
+                </a>
+            </p>
+
+            <a href="mailto:yadavnavya130@gmail.com" class="btn">
+                Send Me an Email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Navya Yadav | All Rights Reserved
+        </p>
+
+        <p>
+            B.Tech CSE - Cybersecurity | 2029
+        </p>
+
+    </footer>
+
+</body>
+</html>
